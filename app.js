@@ -46,8 +46,9 @@ let currentItem = 0;
 window.addEventListener("DOMContentLoaded", function () {
   showPerson(currentItem);
 })
-nextBtn.addEventListener("click", nextBtnClickHandler)
-prevBtn.addEventListener("click", prevBtnClickHandler)
+nextBtn.addEventListener("click", nextBtnClickHandler);
+prevBtn.addEventListener("click", prevBtnClickHandler);
+randomBtn.addEventListener("click", randomBtnClickHandler);
 
 // Defining function
 
@@ -72,5 +73,10 @@ function prevBtnClickHandler() {
   if (currentItem < 0) {
     currentItem = reviews.length - 1;
   }
+  showPerson(currentItem)
+}
+
+function randomBtnClickHandler() {
+  currentItem = Math.floor(Math.random() * reviews.length);
   showPerson(currentItem)
 }
